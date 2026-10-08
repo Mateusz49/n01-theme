@@ -1,30 +1,352 @@
-body,
+```css
+/* =========================================================
+   DART OSTRZESZÓW — PLAYER VS PLAYER
+   ZAWODNIK 1   [1] [2]   ZAWODNIK 2
+   ŚREDNIA 1              ŚREDNIA 2
+   ========================================================= */
+
 html,
+body,
 #score_view_inset_body {
-    background: #09070A !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background: #08070A !important;
     color: #fff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
-.title {
-    background: #09070A !important;
-    color: #fff !important;
+#article {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #08070A !important;
 }
 
-.name {
-    background: #111015 !important;
-    color: #fff !important;
+/* =========================================================
+   TABELA — wyłączamy normalny układ tabeli
+   ========================================================= */
+
+#result_table {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: block !important;
+    border: none !important;
 }
 
-.sets,
-.legs,
-.left {
+/* =========================================================
+   WSZYSTKIE WIERSZE
+   ========================================================= */
+
+#result_table tr {
+    display: block !important;
+    width: 100vw !important;
+}
+
+/* =========================================================
+   UKRYWAMY GÓRNY NAGŁÓWEK
+   ========================================================= */
+
+#result_table > tbody > tr:first-child {
+    display: none !important;
+}
+
+/* =========================================================
+   ZAWODNIK 1
+   ========================================================= */
+
+#p1 {
+    position: absolute !important;
+    left: 0 !important;
+    top: 20vh !important;
+    width: 100vw !important;
+    height: 30vh !important;
+}
+
+/* =========================================================
+   ZAWODNIK 2
+   ========================================================= */
+
+#p2 {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50vh !important;
+    width: 100vw !important;
+    height: 30vh !important;
+}
+
+/* =========================================================
+   IMIONA
+   ========================================================= */
+
+#p1 .name,
+#p2 .name {
+    position: absolute !important;
+    top: 0 !important;
+
+    width: 38vw !important;
+    height: 22vh !important;
+
+    box-sizing: border-box !important;
+
+    background: transparent !important;
+    color: #fff !important;
+
+    border: none !important;
+
+    padding: 0 !important;
+
+    font-size: 7vmin !important;
+    font-weight: 800 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    overflow: visible !important;
+}
+
+/* Zawodnik 1 — lewa strona */
+
+#p1 .name {
+    left: 2vw !important;
+    text-align: left !important;
+}
+
+/* Zawodnik 2 — prawa strona */
+
+#p2 .name {
+    right: 2vw !important;
+    text-align: right !important;
+}
+
+/* =========================================================
+   TEKST IMIENIA
+   ========================================================= */
+
+#p1 .name > div,
+#p2 .name > div {
+    display: block !important;
+    width: 100% !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+    white-space: nowrap !important;
+    text-overflow: clip !important;
+
+    line-height: 1 !important;
+}
+
+/* =========================================================
+   ŚREDNIA — pod imieniem
+   ========================================================= */
+
+#p1_stats,
+#p2_stats {
+    position: absolute !important;
+
+    top: calc(50% + 5vh) !important;
+
+    margin: 0 !important;
+
+    color: #FF69BD !important;
+
+    font-size: 3.5vmin !important;
+    font-weight: 500 !important;
+
+    letter-spacing: .05em !important;
+
+    text-shadow:
+        0 0 5px rgba(255,0,140,.8),
+        0 0 12px rgba(255,0,140,.5) !important;
+}
+
+/* średnia 1 */
+
+#p1_stats {
+    left: 0 !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+/* średnia 2 */
+
+#p2_stats {
+    right: 0 !important;
+    width: 100% !important;
+    text-align: right !important;
+}
+
+/* =========================================================
+   LICZNIKI — ŚRODEK
+   ========================================================= */
+
+#p1 .legs,
+#p2 .legs {
+    position: absolute !important;
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: 13vmin !important;
+    height: 13vmin !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+
+    text-align: center !important;
+}
+
+/* pierwszy licznik */
+
+#p1 .legs {
+    margin-left: -8vmin !important;
+}
+
+/* drugi licznik */
+
+#p2 .legs {
+    margin-left: 8vmin !important;
+}
+
+/* =========================================================
+   KÓŁKA
+   ========================================================= */
+
+#p1 .legs div,
+#p2 .legs div {
+    width: 11vmin !important;
+    height: 11vmin !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 50% !important;
+
     background: #FF008C !important;
     color: #fff !important;
+
+    border: 3px solid #FF69BD !important;
+
+    font-size: 5.5vmin !important;
+    font-weight: 900 !important;
+
+    box-shadow:
+        0 0 8px #FF008C,
+        0 0 20px rgba(255,0,140,.8),
+        0 0 40px rgba(255,0,140,.35) !important;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px rgba(255,0,140,.9) !important;
 }
+
+/* =========================================================
+   DRUGA KOLUMNA — LEFT
+   Ukrywamy ją, jeśli chcesz tylko [1] [2]
+   ========================================================= */
+
+#p1 .left,
+#p2 .left {
+    display: none !important;
+}
+
+/* =========================================================
+   SETS
+   ========================================================= */
+
+.sets {
+    display: none !important;
+}
+
+/* =========================================================
+   FLAGA
+   ========================================================= */
+
+.flag {
+    width: 5vmin !important;
+    height: auto !important;
+    margin-left: 2vmin !important;
+}
+
+/* =========================================================
+   PIERWSZY RZUT
+   ========================================================= */
+
+.first {
+    display: none !important;
+}
+
+/* =========================================================
+   CURRENT — mała neonowa kropka
+   ========================================================= */
 
 #current {
+    position: absolute !important;
+
+    top: 4vh !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 3vmin !important;
+    height: 3vmin !important;
+
+    border-radius: 50% !important;
+
     background: #FF008C !important;
+
+    box-shadow:
+        0 0 8px #FF008C,
+        0 0 20px rgba(255,0,140,.8) !important;
+}
+
+#current_mark {
+    display: none !important;
+}
+
+/* =========================================================
+   DODATKOWA LINIA NEONOWA NA ŚRODKU
+   ========================================================= */
+
+#article:after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 10vh !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 1px !important;
+    height: 80vh !important;
+
+    background: #FF008C !important;
+
+    opacity: .25 !important;
+
     box-shadow:
         0 0 10px #FF008C,
-        0 0 25px rgba(255, 0, 140, .7) !important;
+        0 0 25px rgba(255,0,140,.5) !important;
 }
+
+/* =========================================================
+   WYŚRODKOWANIE LICZNIKÓW
+   ========================================================= */
+
+#p1 .legs,
+#p2 .legs {
+    top: 8vh !important;
+}
+```
