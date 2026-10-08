@@ -1,28 +1,3 @@
-body {
-    background: transparent !important;
-}
-
-.title {
-    background-color: #ff1493 !important;
-    color: #ffffff !important;
-}
-
-.name {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
-
-.sets,
-.legs,
-.left {
-    background-color: #ff1493 !important;
-    color: #ffffff !important;
-}
-
 #current {
-    background-color: #c2185b !important;
-}
-
-.first {
-    background-color: #c2185b !important;
+    background-color: #red;
 }
