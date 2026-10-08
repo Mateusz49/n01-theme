@@ -1,0 +1,118 @@
+/*
+ * DART OSTRZESZÓW — N01 THEME
+ * Neon pink / black
+ */
+
+/* ===== CAŁE TŁO ===== */
+
+html,
+body,
+#score_view_inset_body {
+    background: transparent !important;
+    color: #fff !important;
+}
+
+
+/* ===== GŁÓWNA TABELA ===== */
+
+#article {
+    background: transparent !important;
+}
+
+
+/* ===== GÓRNY I DOLNY PASEK ===== */
+
+.title {
+    background: #09070A !important;
+    color: #FFFFFF !important;
+
+    border-color: #FF008C !important;
+}
+
+
+/* ===== NAZWISKA ZAWODNIKÓW ===== */
+
+.name {
+    background: #111015 !important;
+    color: #FFFFFF !important;
+
+    border-color: #FF008C !important;
+}
+
+
+/* ===== LEGS / SCORE ===== */
+
+.sets,
+.legs,
+.left {
+    background: #FF008C !important;
+    color: #FFFFFF !important;
+
+    border-right: solid 2px #09070A !important;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,.5),
+        0 0 12px rgba(255,0,140,.8);
+}
+
+
+/* ===== STATYSTYKI ===== */
+
+#p1_stats,
+#p2_stats {
+    color: #FF8DCE !important;
+}
+
+
+/* ===== AKTUALNIE RZUCAJĄCY ===== */
+
+#current {
+    background: #FF008C !important;
+
+    box-shadow:
+        0 0 10px rgba(255,0,140,.8),
+        0 0 25px rgba(255,0,140,.55);
+}
+
+
+/* ===== ZNACZNIK FIRST ===== */
+
+.first {
+    background: #FF008C !important;
+
+    box-shadow:
+        0 0 8px #FF008C,
+        0 0 16px rgba(255,0,140,.7);
+}
+
+
+/* ===== ZNACZNIK AKTUALNEGO GRACZA ===== */
+
+#current_mark {
+    border-right-color: #FFFFFF !important;
+}
+
+
+/* ===== LINIE TABELI ===== */
+
+#result_table tr:nth-child(2) td {
+    border-bottom: solid 2px #FF008C !important;
+}
+
+
+/* ===== TEKST TYTUŁÓW ===== */
+
+#title_sets,
+#title_legs,
+#title_left,
+#game,
+#title {
+    color: #FFFFFF !important;
+}
+
+
+/* ===== FLAGI / DODATKI ===== */
+
+.flag {
+    filter: none !important;
+}
