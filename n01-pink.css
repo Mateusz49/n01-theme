@@ -1,263 +1,131 @@
 ```css
-/* =====================================================
-   DART OSTRZESZÓW — NEON PINK SCOREBOARD
-   N01 score_view_inset.html
-   ===================================================== */
-
-:root {
-    --bg: #08070b;
-    --panel: #111015;
-    --pink: #ff008c;
-    --pink-light: #ff62bd;
-    --white: #ffffff;
-    --muted: #b9aeb8;
-}
-
-/* Tło i tekst */
+/* DART OSTRZESZÓW — N01 FIX */
 
 html,
 body,
 #score_view_inset_body {
     margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-    background: var(--bg) !important;
-    color: var(--white) !important;
+    background: #08070b !important;
+    color: #fff !important;
     font-family: Arial, Helvetica, sans-serif !important;
+    overflow: hidden !important;
 }
 
 #article {
-    position: relative !important;
-    width: 100% !important;
-    height: 100vh !important;
-    min-height: 0 !important;
-    background:
-        radial-gradient(ellipse at center,
-            #19101b 0%,
-            var(--bg) 72%) !important;
+    background: #08070b !important;
 }
 
-/* Tabela N01 */
-
 #result_table {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
     width: 100% !important;
     height: 100vh !important;
-    table-layout: fixed !important;
     border-collapse: collapse !important;
 }
 
-/* Górny wiersz nagłówków */
+/* Nagłówki */
 
-#result_table tr:first-child {
-    height: 14vh !important;
+.title {
+    background: #100c13 !important;
+    color: #ff62bd !important;
+    font-weight: bold !important;
+    border-color: #ff008c !important;
 }
 
-#result_table tr:first-child .title {
-    background: transparent !important;
-    color: var(--pink-light) !important;
-    font-size: 3vmin !important;
-    font-weight: 800 !important;
-    text-align: center !important;
-    border: 0 !important;
+#game,
+#title,
+#title_sets,
+#title_legs,
+#title_left {
+    color: #fff !important;
 }
 
-/* Pasek z nazwą zawodnika */
+/* Nazwy zawodników */
 
 .name {
-    position: relative !important;
-    height: 16vh !important;
-    padding: 0 2vw !important;
-    box-sizing: border-box !important;
-    background: linear-gradient(180deg, #19131c, #0c0a0f) !important;
-    color: var(--white) !important;
-    border: 2px solid var(--pink) !important;
-    font-size: 5vmin !important;
-    font-weight: 900 !important;
-    text-align: center !important;
-    vertical-align: middle !important;
-    overflow: hidden !important;
-    text-shadow: 0 0 12px rgba(255, 0, 140, .35) !important;
+    background: #151019 !important;
+    color: #fff !important;
+    font-size: 7vmin !important;
+    font-weight: 800 !important;
+    padding-left: 3vmin !important;
+    border-color: #ff008c !important;
+    text-shadow: 0 0 10px rgba(255, 0, 140, .35) !important;
 }
 
-.name > div {
-    display: block !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    text-overflow: ellipsis !important;
-    line-height: 1.1 !important;
+.name div {
+    padding: 1vmin 0 !important;
 }
 
-/* Flagi i statystyki */
-
-.flag {
-    width: 4vmin !important;
-    height: auto !important;
-    margin-left: 1vmin !important;
-    vertical-align: middle !important;
-}
+/* Średnie */
 
 #p1_stats,
 #p2_stats {
-    display: block !important;
-    margin: 1.5vh 0 0 !important;
-    color: var(--pink-light) !important;
+    color: #ff62bd !important;
     font-size: 2.5vmin !important;
-    font-weight: 600 !important;
-    text-shadow: 0 0 10px rgba(255, 0, 140, .4) !important;
 }
 
-/* Licznik punktów — duże neonowe kółko */
+/* Legsy i sety — zwykłe liczniki */
+
+.sets,
+.legs {
+    background: transparent !important;
+    color: #fff !important;
+    border-right: 1px solid #382033 !important;
+    text-align: center !important;
+}
+
+.sets div,
+.legs div {
+    color: #fff !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 140, .5) !important;
+}
+
+/* Pozostałe punkty — okrągłe liczniki */
 
 .left {
-    width: 27vw !important;
-    height: 58vh !important;
-    padding: 0 !important;
     background: transparent !important;
-    color: var(--white) !important;
-    border: 0 !important;
+    color: #fff !important;
     text-align: center !important;
-    vertical-align: middle !important;
-    font-size: 0 !important;
+    border: none !important;
 }
 
-.left > div {
-    width: 32vmin !important;
-    height: 32vmin !important;
-    max-width: 24vw !important;
-    max-height: 24vw !important;
+.left div {
+    width: 18vmin !important;
+    height: 18vmin !important;
     margin: auto !important;
     box-sizing: border-box !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     border-radius: 50% !important;
-    border: 5px solid var(--pink) !important;
-    background:
-        radial-gradient(circle at 35% 25%,
-            #24202a 0%,
-            #100d14 65%,
-            #08070b 100%) !important;
-    color: var(--white) !important;
-    font-size: 8vmin !important;
+    background: radial-gradient(circle, #211522, #100c13) !important;
+    border: 3px solid #ff008c !important;
+    color: #fff !important;
+    font-size: 7vmin !important;
     font-weight: 900 !important;
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, .25),
-        0 0 18px rgba(255, 0, 140, .45) !important;
     box-shadow:
-        0 0 0 5px rgba(255, 0, 140, .12),
-        0 0 12px var(--pink),
-        0 0 30px rgba(255, 0, 140, .45),
-        inset 0 0 22px rgba(255, 0, 140, .12) !important;
+        0 0 10px #ff008c,
+        0 0 25px rgba(255, 0, 140, .35),
+        inset 0 0 15px rgba(255, 0, 140, .15) !important;
 }
 
-/* Liczniki legów i setów — środkowy wynik */
-
-.legs,
-.sets {
-    width: 10vw !important;
-    padding: 0 !important;
-    background: transparent !important;
-    color: var(--white) !important;
-    border: 0 !important;
-    text-align: center !important;
-    vertical-align: middle !important;
-    font-size: 5vmin !important;
-    font-weight: 900 !important;
-}
-
-.legs > div,
-.sets > div {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    min-height: 8vmin !important;
-    background: transparent !important;
-    color: var(--white) !important;
-    font-size: 5vmin !important;
-    font-weight: 900 !important;
-    text-shadow: 0 0 12px rgba(255, 0, 140, .45) !important;
-}
-
-/* Tytuły środkowych liczników */
-
-#title_legs,
-#title_sets {
-    color: var(--pink-light) !important;
-    font-size: 2vmin !important;
-    text-transform: uppercase !important;
-    letter-spacing: .12em !important;
-}
-
-/* Nagłówek meczu i dodatkowy tytuł */
-
-#game,
-#title {
-    color: var(--muted) !important;
-    font-size: 2vmin !important;
-    text-align: center !important;
-}
-
-/* Wskaźnik aktywnego zawodnika */
+/* Aktywny zawodnik */
 
 #current {
-    position: absolute !important;
-    top: 2vh !important;
-    right: 2vw !important;
-    width: 2.5vmin !important;
-    height: 2.5vmin !important;
-    background: var(--pink) !important;
-    border-radius: 50% !important;
-    box-shadow:
-        0 0 8px var(--pink),
-        0 0 20px rgba(255, 0, 140, .8) !important;
+    background: #ff008c !important;
+    box-shadow: 0 0 12px #ff008c !important;
 }
 
 #current_mark {
-    display: none !important;
+    border-right-color: #fff !important;
 }
 
-/* Znacznik rozpoczynającego */
+/* Linie */
+
+#result_table tr:nth-child(2) td {
+    border-bottom: 1px solid rgba(255, 0, 140, .35) !important;
+}
 
 .first {
-    background: var(--pink) !important;
-    box-shadow: 0 0 12px rgba(255, 0, 140, .7) !important;
-}
-
-/* Linie pomiędzy wierszami */
-
-#result_table tr:nth-child(2) td,
-#result_table tr:nth-child(3) td {
-    border-bottom: 1px solid rgba(255, 0, 140, .28) !important;
-}
-
-/* Ukryj elementy przewijane poza ekran */
-
-#result_table td {
-    overflow: hidden !important;
-}
-
-/* Dostosowanie na niższe ekrany */
-
-@media (max-aspect-ratio: 4/3) {
-    .name {
-        font-size: 4vmin !important;
-    }
-
-    .left > div {
-        width: 25vmin !important;
-        height: 25vmin !important;
-        font-size: 7vmin !important;
-    }
-
-    .legs,
-    .sets {
-        font-size: 4vmin !important;
-    }
+    background: #ff008c !important;
 }
 ```
