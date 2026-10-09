@@ -1,9 +1,19 @@
 ```css
-/* =========================================================
-   DART OSTRZESZÓW — PLAYER VS PLAYER
-   ZAWODNIK 1   [1] [2]   ZAWODNIK 2
-   ŚREDNIA 1              ŚREDNIA 2
-   ========================================================= */
+/* =====================================================
+   DART OSTRZESZÓW — NEON PINK SCOREBOARD
+   N01 score_view_inset.html
+   ===================================================== */
+
+:root {
+    --bg: #08070b;
+    --panel: #111015;
+    --pink: #ff008c;
+    --pink-light: #ff62bd;
+    --white: #ffffff;
+    --muted: #b9aeb8;
+}
+
+/* Tło i tekst */
 
 html,
 body,
@@ -13,340 +23,241 @@ body,
     width: 100% !important;
     height: 100% !important;
     overflow: hidden !important;
-    background: #08070A !important;
-    color: #fff !important;
+    background: var(--bg) !important;
+    color: var(--white) !important;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
 #article {
     position: relative !important;
-    width: 100vw !important;
+    width: 100% !important;
     height: 100vh !important;
-    background: #08070A !important;
+    min-height: 0 !important;
+    background:
+        radial-gradient(ellipse at center,
+            #19101b 0%,
+            var(--bg) 72%) !important;
 }
 
-/* =========================================================
-   TABELA — wyłączamy normalny układ tabeli
-   ========================================================= */
+/* Tabela N01 */
 
 #result_table {
-    position: relative !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    display: block !important;
-    border: none !important;
-}
-
-/* =========================================================
-   WSZYSTKIE WIERSZE
-   ========================================================= */
-
-#result_table tr {
-    display: block !important;
-    width: 100vw !important;
-}
-
-/* =========================================================
-   UKRYWAMY GÓRNY NAGŁÓWEK
-   ========================================================= */
-
-#result_table > tbody > tr:first-child {
-    display: none !important;
-}
-
-/* =========================================================
-   ZAWODNIK 1
-   ========================================================= */
-
-#p1 {
     position: absolute !important;
     left: 0 !important;
-    top: 20vh !important;
-    width: 100vw !important;
-    height: 30vh !important;
-}
-
-/* =========================================================
-   ZAWODNIK 2
-   ========================================================= */
-
-#p2 {
-    position: absolute !important;
-    left: 0 !important;
-    top: 50vh !important;
-    width: 100vw !important;
-    height: 30vh !important;
-}
-
-/* =========================================================
-   IMIONA
-   ========================================================= */
-
-#p1 .name,
-#p2 .name {
-    position: absolute !important;
     top: 0 !important;
-
-    width: 38vw !important;
-    height: 22vh !important;
-
-    box-sizing: border-box !important;
-
-    background: transparent !important;
-    color: #fff !important;
-
-    border: none !important;
-
-    padding: 0 !important;
-
-    font-size: 7vmin !important;
-    font-weight: 800 !important;
-
-    display: flex !important;
-    align-items: center !important;
-
-    overflow: visible !important;
-}
-
-/* Zawodnik 1 — lewa strona */
-
-#p1 .name {
-    left: 2vw !important;
-    text-align: left !important;
-}
-
-/* Zawodnik 2 — prawa strona */
-
-#p2 .name {
-    right: 2vw !important;
-    text-align: right !important;
-}
-
-/* =========================================================
-   TEKST IMIENIA
-   ========================================================= */
-
-#p1 .name > div,
-#p2 .name > div {
-    display: block !important;
     width: 100% !important;
-
-    padding: 0 !important;
-
-    overflow: visible !important;
-    white-space: nowrap !important;
-    text-overflow: clip !important;
-
-    line-height: 1 !important;
+    height: 100vh !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
 }
 
-/* =========================================================
-   ŚREDNIA — pod imieniem
-   ========================================================= */
+/* Górny wiersz nagłówków */
+
+#result_table tr:first-child {
+    height: 14vh !important;
+}
+
+#result_table tr:first-child .title {
+    background: transparent !important;
+    color: var(--pink-light) !important;
+    font-size: 3vmin !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    border: 0 !important;
+}
+
+/* Pasek z nazwą zawodnika */
+
+.name {
+    position: relative !important;
+    height: 16vh !important;
+    padding: 0 2vw !important;
+    box-sizing: border-box !important;
+    background: linear-gradient(180deg, #19131c, #0c0a0f) !important;
+    color: var(--white) !important;
+    border: 2px solid var(--pink) !important;
+    font-size: 5vmin !important;
+    font-weight: 900 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    overflow: hidden !important;
+    text-shadow: 0 0 12px rgba(255, 0, 140, .35) !important;
+}
+
+.name > div {
+    display: block !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.1 !important;
+}
+
+/* Flagi i statystyki */
+
+.flag {
+    width: 4vmin !important;
+    height: auto !important;
+    margin-left: 1vmin !important;
+    vertical-align: middle !important;
+}
 
 #p1_stats,
 #p2_stats {
-    position: absolute !important;
-
-    top: calc(50% + 5vh) !important;
-
-    margin: 0 !important;
-
-    color: #FF69BD !important;
-
-    font-size: 3.5vmin !important;
-    font-weight: 500 !important;
-
-    letter-spacing: .05em !important;
-
-    text-shadow:
-        0 0 5px rgba(255,0,140,.8),
-        0 0 12px rgba(255,0,140,.5) !important;
+    display: block !important;
+    margin: 1.5vh 0 0 !important;
+    color: var(--pink-light) !important;
+    font-size: 2.5vmin !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 140, .4) !important;
 }
 
-/* średnia 1 */
+/* Licznik punktów — duże neonowe kółko */
 
-#p1_stats {
-    left: 0 !important;
-    width: 100% !important;
-    text-align: left !important;
-}
-
-/* średnia 2 */
-
-#p2_stats {
-    right: 0 !important;
-    width: 100% !important;
-    text-align: right !important;
-}
-
-/* =========================================================
-   LICZNIKI — ŚRODEK
-   ========================================================= */
-
-#p1 .legs,
-#p2 .legs {
-    position: absolute !important;
-
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    width: 13vmin !important;
-    height: 13vmin !important;
-
+.left {
+    width: 27vw !important;
+    height: 58vh !important;
     padding: 0 !important;
-
     background: transparent !important;
-    border: none !important;
-
+    color: var(--white) !important;
+    border: 0 !important;
     text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 0 !important;
 }
 
-/* pierwszy licznik */
-
-#p1 .legs {
-    margin-left: -8vmin !important;
-}
-
-/* drugi licznik */
-
-#p2 .legs {
-    margin-left: 8vmin !important;
-}
-
-/* =========================================================
-   KÓŁKA
-   ========================================================= */
-
-#p1 .legs div,
-#p2 .legs div {
-    width: 11vmin !important;
-    height: 11vmin !important;
-
-    margin: 0 !important;
-
+.left > div {
+    width: 32vmin !important;
+    height: 32vmin !important;
+    max-width: 24vw !important;
+    max-height: 24vw !important;
+    margin: auto !important;
+    box-sizing: border-box !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-
-    box-sizing: border-box !important;
-
     border-radius: 50% !important;
-
-    background: #FF008C !important;
-    color: #fff !important;
-
-    border: 3px solid #FF69BD !important;
-
-    font-size: 5.5vmin !important;
+    border: 5px solid var(--pink) !important;
+    background:
+        radial-gradient(circle at 35% 25%,
+            #24202a 0%,
+            #100d14 65%,
+            #08070b 100%) !important;
+    color: var(--white) !important;
+    font-size: 8vmin !important;
     font-weight: 900 !important;
-
-    box-shadow:
-        0 0 8px #FF008C,
-        0 0 20px rgba(255,0,140,.8),
-        0 0 40px rgba(255,0,140,.35) !important;
-
     text-shadow:
-        0 0 5px #fff,
-        0 0 12px rgba(255,0,140,.9) !important;
+        0 0 8px rgba(255, 255, 255, .25),
+        0 0 18px rgba(255, 0, 140, .45) !important;
+    box-shadow:
+        0 0 0 5px rgba(255, 0, 140, .12),
+        0 0 12px var(--pink),
+        0 0 30px rgba(255, 0, 140, .45),
+        inset 0 0 22px rgba(255, 0, 140, .12) !important;
 }
 
-/* =========================================================
-   DRUGA KOLUMNA — LEFT
-   Ukrywamy ją, jeśli chcesz tylko [1] [2]
-   ========================================================= */
+/* Liczniki legów i setów — środkowy wynik */
 
-#p1 .left,
-#p2 .left {
-    display: none !important;
-}
-
-/* =========================================================
-   SETS
-   ========================================================= */
-
+.legs,
 .sets {
-    display: none !important;
+    width: 10vw !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: var(--white) !important;
+    border: 0 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 5vmin !important;
+    font-weight: 900 !important;
 }
 
-/* =========================================================
-   FLAGA
-   ========================================================= */
-
-.flag {
-    width: 5vmin !important;
-    height: auto !important;
-    margin-left: 2vmin !important;
+.legs > div,
+.sets > div {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 8vmin !important;
+    background: transparent !important;
+    color: var(--white) !important;
+    font-size: 5vmin !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 12px rgba(255, 0, 140, .45) !important;
 }
 
-/* =========================================================
-   PIERWSZY RZUT
-   ========================================================= */
+/* Tytuły środkowych liczników */
 
-.first {
-    display: none !important;
+#title_legs,
+#title_sets {
+    color: var(--pink-light) !important;
+    font-size: 2vmin !important;
+    text-transform: uppercase !important;
+    letter-spacing: .12em !important;
 }
 
-/* =========================================================
-   CURRENT — mała neonowa kropka
-   ========================================================= */
+/* Nagłówek meczu i dodatkowy tytuł */
+
+#game,
+#title {
+    color: var(--muted) !important;
+    font-size: 2vmin !important;
+    text-align: center !important;
+}
+
+/* Wskaźnik aktywnego zawodnika */
 
 #current {
     position: absolute !important;
-
-    top: 4vh !important;
-    left: 50% !important;
-
-    transform: translateX(-50%) !important;
-
-    width: 3vmin !important;
-    height: 3vmin !important;
-
+    top: 2vh !important;
+    right: 2vw !important;
+    width: 2.5vmin !important;
+    height: 2.5vmin !important;
+    background: var(--pink) !important;
     border-radius: 50% !important;
-
-    background: #FF008C !important;
-
     box-shadow:
-        0 0 8px #FF008C,
-        0 0 20px rgba(255,0,140,.8) !important;
+        0 0 8px var(--pink),
+        0 0 20px rgba(255, 0, 140, .8) !important;
 }
 
 #current_mark {
     display: none !important;
 }
 
-/* =========================================================
-   DODATKOWA LINIA NEONOWA NA ŚRODKU
-   ========================================================= */
+/* Znacznik rozpoczynającego */
 
-#article:after {
-    content: "" !important;
-
-    position: absolute !important;
-
-    left: 50% !important;
-    top: 10vh !important;
-
-    transform: translateX(-50%) !important;
-
-    width: 1px !important;
-    height: 80vh !important;
-
-    background: #FF008C !important;
-
-    opacity: .25 !important;
-
-    box-shadow:
-        0 0 10px #FF008C,
-        0 0 25px rgba(255,0,140,.5) !important;
+.first {
+    background: var(--pink) !important;
+    box-shadow: 0 0 12px rgba(255, 0, 140, .7) !important;
 }
 
-/* =========================================================
-   WYŚRODKOWANIE LICZNIKÓW
-   ========================================================= */
+/* Linie pomiędzy wierszami */
 
-#p1 .legs,
-#p2 .legs {
-    top: 8vh !important;
+#result_table tr:nth-child(2) td,
+#result_table tr:nth-child(3) td {
+    border-bottom: 1px solid rgba(255, 0, 140, .28) !important;
+}
+
+/* Ukryj elementy przewijane poza ekran */
+
+#result_table td {
+    overflow: hidden !important;
+}
+
+/* Dostosowanie na niższe ekrany */
+
+@media (max-aspect-ratio: 4/3) {
+    .name {
+        font-size: 4vmin !important;
+    }
+
+    .left > div {
+        width: 25vmin !important;
+        height: 25vmin !important;
+        font-size: 7vmin !important;
+    }
+
+    .legs,
+    .sets {
+        font-size: 4vmin !important;
+    }
 }
 ```
